@@ -14,13 +14,13 @@
   li {
     margin: 0;
     padding: 0;
+    list-style: none;
   }
   .wraper {
-    display: none;
+    display: none; // 初始化不显示，防止js没有加载的时候显示错落布局
     height: 100%;
   }
   .item {
-    list-style: none;
     height: 100%;
     text-align: center;
   }
