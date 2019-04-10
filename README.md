@@ -27,7 +27,7 @@
 
   </style>
 ```
-必须包含class名为wraper，item的节点，结构如下
+必须包含class名为wraper，item的节点，item个数不限，结构如下
 ```html
  <div class="box">
     <ul class="wraper">
@@ -39,7 +39,10 @@
     </ul>
   </div>
 ```
-new Slider(dom[,object]) object={interval,transition}
+new Slider(dom[,option]) option={interval,transition}
+选填参数option
+interval   [Number] 毫秒
+transition [Number] 秒
 ```javascript
 let slider = new Slider(document.querySelector('.box'))
 // 左移
