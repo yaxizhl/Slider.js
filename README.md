@@ -42,4 +42,8 @@
 new Slider(dom[,object]) object={interval,transition}
 ```javascript
 let slider = new Slider(document.querySelector('.box'))
+// 左移
+slider.goLeft()
+// 右移
+slider.goRight()
 ```
