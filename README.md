@@ -1,6 +1,9 @@
 # Slider.js
+
 > 循环轮播图
+
 ## 示例
+
 ```html
 <style>
   .box {
@@ -17,36 +20,46 @@
     list-style: none;
   }
   .wraper {
-    display: none; // 初始化不显示，防止js没有加载的时候显示错落布局
     height: 100%;
   }
   .item {
     height: 100%;
     text-align: center;
   }
+</style>
+```
 
-  </style>
-```
-必须包含class名为wraper，item的节点，item个数不限，结构如下
+必须包含 class 名为 wraper，item 的节点，item 个数不限，结构如下
+
 ```html
- <div class="box">
-    <ul class="wraper">
-      <li class="item">1</li>
-      <li class="item">2</li>
-      <li class="item">3</li>
-      <li class="item">4</li>
-      <li class="item">5</li>
-    </ul>
-  </div>
+<div class="box">
+  <ul class="wraper">
+    <li class="item">1</li>
+    <li class="item">2</li>
+    <li class="item">3</li>
+    <li class="item">4</li>
+    <li class="item">5</li>
+  </ul>
+</div>
 ```
-new Slider(dom[,option]) option={interval,transition}
-选填参数option
-interval   [Number] 毫秒
+
+new Slider(dom[,option]) option={interval,transition}, function
+选填参数 option
+interval [Number] 毫秒
 transition [Number] 秒
+
 ```javascript
-let slider = new Slider(document.querySelector('.box'))
+let slider = new Slider(document.querySelector('.box'), {}, function(index) {
+  console.log(index) // 当前item
+})
 // 左移
 slider.goLeft()
 // 右移
 slider.goRight()
+// 移动到指定item
+slider.skipTo(3)
+// 开始移动
+slider.start()
+// 停止移动
+slider.stop()
 ```

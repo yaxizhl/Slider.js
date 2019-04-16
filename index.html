@@ -1,50 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>slider.js demo</title>
+    <style>
+      .box {
+        height: 200px;
+        width: 30%;
+        margin: 50px auto;
+        overflow: hidden;
+        background-color: gray;
+      }
+      ul,
+      li {
+        margin: 0;
+        padding: 0;
+      }
+      .wraper {
+        height: 100%;
+      }
+      .item {
+        list-style: none;
+        height: 100%;
+        text-align: center;
+        font-size: 40px;
+      }
+    </style>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>slider.js demo</title>
-  <style>
-  .box {
-    height: 200px;
-    width: 30%;
-    margin: 50px auto;
-    overflow: hidden;
-    background-color: gray;
-  }
-  ul,
-  li {
-    margin: 0;
-    padding: 0;
-  }
-  .wraper {
-    display: none;
-    height: 100%;
-  }
-  .item {
-    list-style: none;
-    height: 100%;
-    text-align: center;
-  }
-
-  </style>
-</head>
-
-<body>
-  <div class="box">
-    <ul class="wraper">
-      <li class="item">1</li>
-      <li class="item">2</li>
-      <li class="item">3</li>
-      <li class="item">4</li>
-      <li class="item">5</li>
-    </ul>
-  </div>
-</body>
-<script src="./slider.js"></script>
-<script>
-let slider = new Slider(document.querySelector('.box'))
-
-</script>
-
+  <body>
+    <div class="box">
+      <ul class="wraper">
+        <li class="item">1</li>
+        <li class="item">2</li>
+        <li class="item">3</li>
+        <li class="item">4</li>
+        <li class="item">5</li>
+        <li class="item">6</li>
+      </ul>
+    </div>
+    <button onclick="slider.goLeft()">left</button>
+    <button onclick="slider.goRight()">right</button>
+  </body>
+  <script src="/Slider.js"></script>
+  <script>
+    let slider = new Slider(document.querySelector('.box'), {}, index => {
+      console.log(index)
+    })
+  </script>
 </html>
