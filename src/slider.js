@@ -58,7 +58,7 @@ class Slider {
     this.moving = true
     this.cloneItem = this.items()[0].cloneNode(true)
     this.wraper.appendChild(this.cloneItem)
-    this.cb(this.items()[1].dataset.index)
+    this.cb&&this.cb(this.items()[1].dataset.index,this.items().length)
     this.wraper.style.transition = 'all ' + this.config.transition + 's ease'
     this.wraper.style.marginLeft = '-' + this.boxWidth + 'px'
     this.reset(true)
@@ -74,7 +74,7 @@ class Slider {
       this.wraper.style.transition = 'all ' + this.config.transition + 's ease'
       this.wraper.style.marginLeft = 0 + 'px'
     })
-    this.cb(this.items()[0].dataset.index)
+    this.cb&&this.cb(this.items()[0].dataset.index,this.items().length)
     this.reset()
   }
   skipTo(index) {
@@ -86,7 +86,7 @@ class Slider {
     })
     this.wraper.style.transition = 'all ' + this.config.transition + 's ease'
     this.wraper.style.marginLeft = '-' + this.boxWidth * n + 'px'
-    this.cb(index)
+    this.cb&&this.cb(index,this.items().length)
     // 对节点进行排序
     setTimeout(() => {
       this.wraper.style.transition = null
