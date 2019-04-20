@@ -101,12 +101,12 @@ class Slider {
     }, this.config.transition * 1000)
   }
   start() {
-    this.t = setInterval(() => {
+    this.t = setTimeout(() => {
       this.goLeft()
     }, this.config.interval)
   }
   stop() {
-    clearInterval(this.t)
+    clearTimeout(this.t)
   }
 }
 window.Slider = Slider
