@@ -97,7 +97,6 @@ class Slider {
       newArr.forEach(val => {
         this.wraper.appendChild(val)
       })
-      this.start()
     }, this.config.transition * 1000)
   }
   start() {
